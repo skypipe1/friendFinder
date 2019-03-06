@@ -27,8 +27,8 @@ app.use(express.json());
 
 
 // use require? nope does not work breaks code says "can not find module"
-// require(path.join(__dirname, '/apiRoutes.js'))(app);
-// require(path.join(__dirname, '/htmlRoutes.js'))(app);
+require(path.join(__dirname, '/apiRoutes.js'))(app);
+require(path.join(__dirname, '/htmlRoutes.js'))(app);
 
 // starts the server
 app.listen(PORT, function () {
