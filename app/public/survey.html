@@ -14,7 +14,7 @@
 <body>
     <div class="container content">
         <h1>Survey</h1>
-        <p>Take a quick survey to find yourself a new friend! 1 being you disagree, and 5 being you strongly agree! Good
+        <p>Take a quick survey to find yourself a new friend! 1 being you strongly disagree, and 5 being you strongly agree! Good
             luck!</p>
         <form>
             <div class="form-group">
@@ -27,18 +27,18 @@
                 <label for="question1">Do you feel that you are easily distracted?</label>
                 <select class="form-control" id="question1">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question2">Do you feel insecure as a person?</label>
                 <select class="form-control" id="question2">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -49,88 +49,88 @@
                 <label for="question3">Do feel amusment from the misfortune of others?</label>
                 <select class="form-control" id="question3">
                     <option value="empty"></option>
-                    <option value="1">1 - Disagree</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5 - Stongly Agree</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question4">Do you feel as if you have a rebelious personality?</label>
                 <select class="form-control" id="question4">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question5">Do you feel as if you have an overacheving personality?</label>
                 <select class="form-control" id="question5">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question6">Do you have a good Sense of Humor?</label>
                 <select class="form-control" id="question6">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question7">Do you feel like you have higher morals than others?.</label>
                 <select class="form-control" id="question7">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question8">Do you feel that you are an impulsive person?</label>
                 <select class="form-control" id="question8">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question9">Do you feel that you are a compassionate person?</label>
                 <select class="form-control" id="question9">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="question10">Do you feel that you are and honest and sincere person?</label>
                 <select class="form-control" id="question10">
                     <option value="empty"></option>
-                    <option value="1">1</option>
+                    <option value="1">1 - Strongly Disagree</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5">5 - Strongly Agree</option>
                 </select>
             </div>
         </form>
@@ -187,14 +187,23 @@
 
         };
 
-        //   logs the users input into the console. WORKING!
-        console.log(newUser);
-
         //   post data to friends API
         $.post("/api/friends", newUser, function (data) {
             $("#simpsonName").text(data.name);
             $("#simpsonPhoto").attr("src", data.photo);
             $("#resultsModal").modal("show");
+            $("#name").val(""),
+            $("#photo").val(""),
+            $('#question1').val(""),
+            $('#question2').val(""),
+            $('#question3').val(""),
+            $('#question4').val(""),
+            $('#question5').val(""),
+            $('#question6').val(""),
+            $('#question7').val(""),
+            $('#question8').val(""),
+            $('#question9').val(""),
+            $('#question10').val("")
         });
 
     });
