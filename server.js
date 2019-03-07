@@ -1,23 +1,17 @@
 // Dependencies
-
 var express = require("express");
 var path = require("path");
-
 
 // Sets up the Express App
 var app = express();
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
-
-
 // use require? nope does not work breaks code says "can not find module"
-// require('./apiRoutes')(app);
+require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
 
 // starts the server
